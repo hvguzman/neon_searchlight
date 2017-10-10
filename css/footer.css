@@ -1,0 +1,30 @@
+/*.nav {
+	background-color: black;
+	height: 60px;
+}
+
+button {
+	color: white;
+}
+
+.navbar-toggler-icon {
+	color: white;
+}
+
+li.nav-link {
+	display: inline;
+	width: 10px;
+}
+
+ul {
+	width: 50px;
+}
+
+a {
+	float: right;
+}
+
+.nav-link {
+	display: inline;
+}
+*/
