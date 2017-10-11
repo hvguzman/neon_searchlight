@@ -12,7 +12,7 @@ else
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-	<?php require_once('header.php'); ?>
+	<?php require_once('partials/header.php'); ?>
 
 	<div class="container-fluid">
 		<div class="card col-sm-6 mx-auto">

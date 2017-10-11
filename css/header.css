@@ -3,13 +3,14 @@
 	body { background: #eee; }
 	#container {
 		width: 800px; height: 380px; margin: 50px auto; padding: 170px 0 0 0; text-align: center;
-		background: url(https://line25.com/wp-content/uploads/2009/anaglyphic-text/demo/main-bg.jpg) 0 0 no-repeat;
 	}
 	
 	h1 {
 		display: inline;
 		position: relative;
-		font: 90px Helvetica, Sans-Serif;
+		/*font-family: 'Audiowide', cursive;*/
+		font: 4em 'Audiowide', Sans-Serif;
+		/*font: 90px Helvetica, Sans-Serif;*/
 		letter-spacing: -5px;
 		color: rgba(0,0,255,0.5); 
 	}
@@ -18,4 +19,23 @@
 		content: "NEON_SEARCHLIGHT";
 		position: absolute; left: 10px; top: 5px;
 		color: rgba(255,0,0,0.5);   
+	}
+
+	h4 {
+		/*font-family: 'Open Sans', sans-serif;*/
+		font-family: 'Share Tech Mono', monospace;
+	}
+
+	h5 {
+		/*font-family: 'Open Sans', sans-serif;*/
+		font-family: 'Share Tech Mono', monospace;
+	}
+
+	a {
+		font-family: 'Share Tech Mono', monospace;
+		font-size: 40px;
+	}
+
+	button {
+		background-color: #009BA1;
 	}

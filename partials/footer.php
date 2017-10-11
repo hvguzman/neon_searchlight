@@ -24,8 +24,7 @@ else
 
 
 
-
-	<div class="nav navbar-default fixed-bottom">
+	<!-- <div class="nav navbar-default fixed-bottom">
 			
 			<div class="navbar-header">
 				<div>
@@ -55,7 +54,7 @@ else
 				<h6 class="text-left" style="color: white">Welcome, <?php echo $username; ?>!</h6>
 			  </nav>
 			</div>
-	</div>
+	</div> -->
 
 
 </body>

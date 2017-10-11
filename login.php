@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="css/login.css">
 <html>
-
 <?php 
 session_start();
 if(isset($_SESSION['username']))
 	$username = $_SESSION['username'];
 else
 	$username = "guest";
-
-// $string = file_get_contents("items.json");
-// $items = json_decode($string, true);
-
  ?>
 <head>
 	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
 <body>
 	<?php require_once('partials/header.php'); ?>
@@ -43,7 +36,6 @@ else
 				</div>
 			</form>	
 		</div>
-	<?php require_once('partials/footer.php'); ?>
 	</div>
 
 

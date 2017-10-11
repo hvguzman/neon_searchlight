@@ -15,7 +15,7 @@ session_start();
 
 	<?php require_once('partials/header.php'); ?>
 	
-		<img class="img-fluid" src="img/index.jpg">
+	<img class="img-fluid" src="img/index.jpg">
 		
 	<div class="col-sm-4 float-right words">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -31,6 +31,8 @@ session_start();
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua.</p>
 	</div>
+
+	
 
 	<?php require_once('partials/footer.php'); ?>
 
