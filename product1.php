@@ -43,6 +43,10 @@ function display_items(){
 		echo "
 		<div class='card'>
 		  <ul class='list-group list-group-flush'>
+		  <form class='form-horizontal' method='POST' action='addtocart.php?id=$id'>
+		  <input type='number' min='1' name='quantity' id='quantity'>
+		  <button type='submit' name='addtocartbtn' id='addtocartbtn' class='btn btn-success'>Add to Cart</button>
+		  </form>
 		    <li class='list-group-item'><label>Product ID:</label>$id</li>
 		    <li class='list-group-item'><label>Product Name:</label>$productName</li>
 		    <li class='list-group-item'><label>Price:</label>$productPrice</li>
@@ -60,15 +64,12 @@ function display_items(){
 }
 
  ?>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Products Page</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -81,5 +82,6 @@ function display_items(){
 		<?php display_items(); ?>
 
 	<?php require_once('partials/footer.php'); ?>
+
 </body>
 </html>
