@@ -19,7 +19,7 @@ else
 	<?php require_once('partials/header.php'); ?>
 
 	<div class="container-fluid">
-		<div class="card col-sm-6 mx-auto">
+		<div class="card col-sm-12 mx-auto">
 			<h4 class="card-header">Log In</h4>
 			<form class="form-horizontal" action="authentication.php" method="POST">
 				<div class="form-group">
@@ -27,16 +27,15 @@ else
 						Username:
 					</label>
 					<div class="col-sm-12">
-						<input class="form-control" type="text" id="username" name="username" placeholder="username"></input>
+						<input class="form-control" type="text" id="username" name="username" placeholder="username" required></input>
 					</div></li>
 				</div>
 				<div class="form-group">
 					<li class="list-group-item"><label class="control-label col-sm-4" for="password">Password:</label>
 					<div class="col-sm-12">
-						<input type="password" class="form-control" id="password" name="password" placeholder="Enter password"></input>
-							<label><input type="checkbox" name="remember">Remember me</label>
-							<button type="submit" name="login" class="btn btn-group btn-primary btn-block"><span class="text-center">Log In</span></button>
+						<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required></input>
 					</div></li>
+							<button type="submit" name="login" class="btn btn-group btn-primary btn-block"><span class="text-center col-12">Log In</span></button>
 				</div>
 			</form>	
 		</div>

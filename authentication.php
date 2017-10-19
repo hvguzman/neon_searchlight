@@ -23,8 +23,14 @@ if(isset($_POST['register'])){
 	$username = $_POST['username'];
 	$password = sha1($_POST['password']);
 	$password2 = sha1($_POST['password2']);
+	$firstName = $_POST['firstName'];
+	$surname = $_POST['surname'];
+	$bday = $_POST['bday'];
+	$city = $_POST['city'];
+	$lawenf = $_POST['lawenf'];
 	$flag = true;
 	$sql = "SELECT * FROM users WHERE username = '$username'";
+	$sql2 = "SELECT * FROM customers";
 	$result = mysqli_query($conn,$sql);
 
 	// This function returns the number of rows.
@@ -34,17 +40,21 @@ if(isset($_POST['register'])){
 	if(mysqli_num_rows($result)>0){
 		// echo $sql;
 		$flag = false;
+		echo "This username is already taken. Please choose a new one.";
+		echo "<a href='register.php' class='btn'>Back to Registration<a>";
 	}
 	if($password != $password2){
 		$flag = false;
 		echo "Passwords do not match.";
+		echo "<a href='register.php' class='btn'>Back to Registration<a>";
 	}
 	if($flag){
 		$sql = "INSERT INTO users (username,password) VALUES ('$username', '$password')";
-		if(mysqli_query($conn,$sql))
-			echo "ey";
-			var_dump($conn);
-			echo $sql;
+		$sql2 = "INSERT INTO customers (firstName, lastName, birthday, city, lawEnf) VALUES ('$firstName', '$surname', $bday, '$city', $lawenf)";
+		if(mysqli_query($conn,$sql) and mysqli_query($conn,$sql2))
+			// echo "ey";
+			// var_dump($conn);
+			// echo $sql;
 			echo "Registration successful";
 			echo "<a href='login.php'>Login here</a>";
 			echo $username . $password;

@@ -18,33 +18,67 @@ else
 <body>
 	<?php require_once('partials/header.php'); ?>
 
-	<div class="container-fluid">
-		<div class="card col-sm-6 mx-auto">
-			<h4 class="card-header">Register</h4>
+	<div class="container">
+		<div class="card col-sm-12 mx-auto">
+			<h1 class="card-header">Register</h1>
+			<h5 class="sub">You are free to withhold some information, but fields with brackets are [required].</h5>
 			<form class="form-horizontal" action="authentication.php" method="POST">
 			<div class="form-group">
 				<li class="list-group-item"><label class="control-label col-sm-4" for="username">
-					Username:
+					[Username]:
 				</label>
 				<div class="col-sm-12">
-					<input class="form-control" type="text" id="username" name="username" placeholder="username"></input>
+					<input class="form-control" type="text" id="username" name="username" placeholder="Enter a username" required></input>
 				</div></li>
 			</div>
 			<div class="form-group">
-					<li class="list-group-item"><label class="control-label col-sm-4" for="password">Password:</label>
+					<li class="list-group-item"><label class="control-label col-sm-4" for="password">[Password]:</label>
 					<div class="col-sm-12">
-						<input type="password" class="form-control" id="password" name="password" placeholder="Enter password"></input>
+						<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required></input>
 					</div></li>
 			</div>
 			<div class="form-group">
-					<li class="list-group-item"><label class="control-label col-sm-4" for="password">Password:</label>
+					<li class="list-group-item"><label class="control-label col-sm-4" for="password">[Re-enter your password]:</label>
 					<div class="col-sm-12">
-						<input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password"></input>
+						<input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" required></input>
+					</div></li>
+			</div>
+			<div class="form-group">
+					<li class="list-group-item"><label class="control-label col-sm-4" for="password">First Name:</label>
+					<div class="col-sm-12">
+						<input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter your first name"></input>
+					</div></li>
+			</div>
+			<div class="form-group">
+					<li class="list-group-item"><label class="control-label col-sm-4" for="password">Surname:</label>
+					<div class="col-sm-12">
+						<input type="text" class="form-control" id="surname" name="surname" placeholder="Enter your surname"></input>
+					</div></li>
+			</div>
+			<div class="form-group">
+					<li class="list-group-item"><label class="control-label col-sm-4" for="password">[Birthday]</label>
+					<div class="col-sm-12">
+						<input type="date" class="form-control" id="bday" name="bday" required></input>
+					</div></li>
+			</div>
+			<div class="form-group">
+					<li class="list-group-item"><label class="control-label col-sm-4" for="password">City</label>
+					<div class="col-sm-12">
+						<input type="text" class="form-control" id="city" name="city" placeholder="Your current city of residence"></input>
+					</div></li>
+			</div>
+			<div class="form-group">
+					<li class="list-group-item"><label class="control-label col-sm-12" for="password">[Do you have current or prior experience working for law enforcement?]</label>
+					<div class="col-sm-12">
+						<select name="lawenf" class="col-sm-12">
+							<option id="lawenfy" name="lawenf" value='1'>Yes</option>
+							<option id="lawenfn" name="lawenf" value='0'>No</option>
+						</select>
 					</div></li>
 			</div>
 			<div class="form-group">
 					<div class="col-sm-12">
-						<button type="submit" name="register" class="btn btn-group btn-primary btn-block"><span class="text-center">Register</span></button>
+						<button type="submit" name="register" class="btn btn-group btn-primary btn-block"><span class="text-center col-12">Register</span></button>
 					</div></li>
 			</div>
 		</form>	

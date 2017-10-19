@@ -1,45 +1,137 @@
 * { margin: 0; padding: 0; }
 	
-	body { background: #eee; }
+	body { background: black; }
 	#container {
 		width: 800px; height: 380px; margin: 50px auto; padding: 170px 0 0 0; text-align: center;
 	}
 	
 	h1 {
-		display: inline;
-		position: relative;
+		/*display: inline;*/
+		/*position: relative;*/
 		/*font-family: 'Audiowide', cursive;*/
-		font: 4em 'Audiowide', Sans-Serif;
+		font: 3em 'Share Tech Mono', Sans-Serif;
 		/*font: 90px Helvetica, Sans-Serif;*/
-		letter-spacing: -5px;
+		/*letter-spacing: -5px;*/
 		color: rgba(0,0,255,0.5); 
+    /*color: rgba(255,0,0,0.5);  */
+    /*color: white;*/
+    /*color: #426DFB;*/
+    background-color: white;
 	}
 	
-	h1:after {
-		content: ">NEON_SEARCHLIGHT";
+	/*h1:after {
+		content: "News + Blog Updates";
 		position: absolute; left: 10px; top: 5px;
-		color: rgba(255,0,0,0.5);   
-	}
+		/*color: rgba(255,0,0,0.8);*/
+    /*color: white;*/
+	/*}*/
 
 	h4 {
 		/*font-family: 'Open Sans', sans-serif;*/
 		font-family: 'Share Tech Mono', monospace;
+		color: white;
 	}
 
 	h5 {
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
+  }
+
+  h6 {
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
+  }
+
+
+  a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5em;
+  }
+
+  .log {
 		/*font-family: 'Open Sans', sans-serif;*/
 		font-family: 'Share Tech Mono', monospace;
+    font-size: 25px;
+    color: #F40A35;
+    padding: 2px;
+    margin-right: 10px;
+    margin-bottom: 3px;
 	}
 
-	a {
-		font-family: 'Share Tech Mono', monospace;
-		font-size: 40px;
-	}
+  .log2 {
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 25px;
+    color: #3596e0;
+  }
 
 	button {
 		background-color: #009BA1;
 	}
 
+@font-face {
+  font-family: 'Audiowide';
+  /*src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);*/
+  src: url(https://fonts.googleapis.com/css?family=Audiowide);
+}
+
+.neon {
+  font-family: 'Audiowide';
+  color: #FB4264;
+  font-size: 5vw;
+  line-height: 5vw;
+  text-shadow: 0 0 3vw #F40A35;
+  display: inline;
+}
+
+.flux {
+  font-family: 'Audiowide';
+  color: #426DFB;
+  font-size: 5vw;
+  line-height: 5vw;
+  text-shadow: 0 0 3vw #2356FF;
+  display: inline;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    /*text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;*/
+    text-shadow: 0 0 1vw #FF1493, 0 0 3vw #FF1493, 0 0 10vw #FF1493, 0 0 10vw #FF1493, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.flux {
+  animation: flux 2s linear infinite;
+  -moz-animation: flux 2s linear infinite;
+  -webkit-animation: flux 2s linear infinite;
+  -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    color: #146C80;
+  }
+}
 	
 /* equal card height */
 .row-equal > div[class*='col-'] {
@@ -70,4 +162,139 @@
 .card-img-top-250 {
     max-height: 250px;
     overflow:hidden;
+}
+
+.log {
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+  }
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 20px/1 FontAwesome;
+    /* font-size: inherit; */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.search-form .form-group span.form-control-feedback {
+    position: absolute;
+    top: -6px;
+    right: -2px;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #F40A35;
+    left: initial;
+    font-size: 20px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: rgb(70, 74, 76);
+    background-color: black;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    padding: 0.5rem 0.75rem;
+    padding-top: 0.5rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(220, 200, 200, 0.15);
+    border-image: initial;
+    /*transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;*/
+}
+
+.btn-outline-primary {
+    color: #F40A35;
+    background-image: none;
+    background-color: transparent;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 13.33333px "Audiowide";
+}
+
+.bg-faded {
+    background-color: transparent;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 2em;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-toggler {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .open>.nav-link {
+    color: white;
+}
+
+.nav-link: hover {
+    font-size: 2em;
+    color: #F40A35;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover, .navbar-toggler {
+    text-decoration: none;
+    background-color: #F40A35;
+    border-radius: 5px;
+    border-right: 5px solid #92061F;
+    border-left: 5px solid #c3082a;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #92061F;
+}
+
+.imgcontainer {
+    display: inline-block;
+}
+
+#sbar {
+  width: 320px;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+#sbut {
+  margin-top: 2px;
+  margin-right: 2px;
+  height: 35px;
+  text-align: center;
+}
+
+.modal-title {
+  color: black;
+}
+
+.modal-backdrop {
+  z-index: 99;
 }

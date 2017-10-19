@@ -5,31 +5,53 @@ if(isset($_SESSION['username']))
 	$username = $_SESSION['username'];
 else
 	$username = "guest";
+/*added*/
+$sql = "SELECT * FROM products";
+	$result = mysqli_query($conn,$sql);
+	while ($row = mysqli_fetch_assoc($result)){
+		extract($row);
+		// var_dump($row);
+	foreach($result as $item){
+		// $id = ['id'];
+		// var_dump($result);
+		// echo $row;
+		// var_dump($row);
+		// var_dump($item);
+		$id = $item['id'];
+		// $productName = "SELECT productName FROM products WHERE productName=$productName";
+		$productName = $productName;
+		// $productName = $item['productName']; previous format
+		$productImg = $productImg;
+		$productPrice = $productPrice;
+		$productDesc = $productDesc;
+		$category_id = $category_id;
+		$productQty =  $productQty;}}
+/*end*/
 // this takes all the id's (id, productName, productPrice, productDesc)
 // makes it into an associative array
 // and allows it to become a global $id
 if(isset($_POST['edit'])){
 	$id = $_POST['id'];
 	$productName = $_POST['productName'];
+	$productImg = $_POST['productImg'];
 	$productPrice = $_POST['productPrice'];
 	$productDesc = $_POST['productDesc'];
 	$category_id = $_POST['category_id'];
 	$productQty = $_POST['productQty'];
-	$sql = "UPDATE products SET productName = '$productName', productPrice = '$productPrice', productDesc = '$productDesc' WHERE id = $id";
+	$sql = "UPDATE products SET productName = '$productName', productImg = '$productImg', productPrice = '$productPrice', productDesc = '$productDesc' WHERE id = $id";
  	mysqli_query($conn,$sql) or die();
  	$sql = "SELECT * FROM products WHERE id = $id";
  	$result = mysqli_query($conn,$sql);
 	$result = mysqli_fetch_assoc($result);
 	extract($result);
-	
 }
-	foreach($result as $item){
-		$id = $item['id'];
-		$productName = $item['productName'];
-		$productPrice = $item['productPrice'];
-		$productDesc = $item['productDesc'];
-		$category_id = $item['category_id'];
-		$productQty = $item['productQty'];
+	// foreach($result as $item){
+	// 	$id = $item['id'];
+	// 	$productName = $item['productName'];
+	// 	$productPrice = $item['productPrice'];
+	// 	$productDesc = $item['productDesc'];
+	// 	$category_id = $item['category_id'];
+	// 	$productQty = $item['productQty'];
 		// example: for each "id" as "1"
 		// $item = "1"
 		// example: for each "productcat" as "Food Additives"
@@ -37,12 +59,12 @@ if(isset($_POST['edit'])){
 		// for each "price" as "500"
 		// $item = "500"
 		// and so on
-		if($item['id']==$id){
+		// if($item['id']==$id){
 			// example: if "Food Additives"['id'] = "productcat"
-	 		$chosen_item = $item;
+	 		// $chosen_item = $item;
 			// $chosen_item = "Food Additives"
-	 	}
-	}
+	 	// }
+	// }
 
 
  ?>
@@ -63,15 +85,6 @@ if(isset($_POST['edit'])){
 </head>
 <body>
 
-	<?php echo $result;
-		  echo $id;
-		  echo $productName;
-		  echo $productPrice;
-		  echo $productDesc;
-		  echo $category_id;
-		  echo $productQty;
-	 ?>
-	
 	<div class="container-fluid">
 		<form class="form-horizontal" method="POST">
 			
@@ -80,7 +93,8 @@ if(isset($_POST['edit'])){
 					Product ID #:
 				</label>
 				<div class="col-sm-10">
-					<input class="form-control" type="text" id="id" name="id" placeholder="Type the ID# of the product you wish to edit" value="<?php echo $chosen_item['id']; ?>">
+					<!-- <input class="form-control" type="text" id="id" name="id" placeholder="Type the ID# of the product you wish to edit" value="<?php echo $id; ?>"> -->
+					<input class="form-control" type="text" id="id" name="id" placeholder="Type the ID# of the product you wish to edit">
 				</div>
 			</div>
 			<div class="form-group">
@@ -88,31 +102,37 @@ if(isset($_POST['edit'])){
 					Product Category:
 				</label>
 				<div class="col-sm-10">
-					<input class="form-control" type="text" id="category_id" name="category_id" placeholder="Enter new product category number" value="<?php echo $chosen_item['category_id']; ?>">
+					<input class="form-control" type="text" id="category_id" name="category_id" placeholder="Enter new product category number">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="productName">Product Name</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="productName" name="productName" placeholder="Enter new product name" value="<?php echo $chosen_item['productName']; ?>">
+					<input type="text" class="form-control" id="productName" name="productName" placeholder="Enter new product name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="productImg">Product Image</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="productImg" name="productImg" placeholder="Enter new product image source">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="productDesc">Description:</label>
 				<div class="col-sm-10">
-					<input class="form-control" type="text" id="productDesc" name="productDesc" placeholder="Enter new product description" value="<?php echo $chosen_item['productDesc']; ?>">
+					<input class="form-control" type="text" id="productDesc" name="productDesc" placeholder="Enter new product description">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="productPrice">Price:</label>
 				<div class="col-sm-10">
-					<input class="form-control" type="text" id="productPrice" name="productPrice" placeholder="Enter new product price" value="<?php echo $chosen_item['productPrice']; ?>">
+					<input class="form-control" type="text" id="productPrice" name="productPrice" placeholder="Enter new product price">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="productQty">Quantity Available:</label>
 				<div class="col-sm-10">
-					<input class="form-control" type="text" id="productQty" name="productQty" placeholder="Enter new product price" value="<?php echo $chosen_item['productQty']; ?>">
+					<input class="form-control" type="text" id="productQty" name="productQty" placeholder="Enter new product quantity">
 				</div>
 			</div>
 			<div class="form-group">
