@@ -56,7 +56,7 @@ if(isset($_POST['register'])){
 			// var_dump($conn);
 			// echo $sql;
 			echo "Registration successful";
-			echo "<a href='login.php'>Login here</a>";
+			echo "<h1><a href='login.php'>Login here</a></h1>";
 			echo $username . $password;
 	}
 

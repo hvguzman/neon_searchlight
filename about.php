@@ -98,7 +98,7 @@ $items = json_decode($string, true);
 			  			</div>
 			  			<div>
 
-			  				<button type="submit" class="btn btn-default submit col-12 send" name='feedback'><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+			  				<button type="submit" class="btn btn-outline-primary submit col-12 send log" name='feedback'><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
 			  			</div>
 			  			
 					</div>

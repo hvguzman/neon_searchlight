@@ -7,10 +7,9 @@ if(! $conn ) {
    }
    echo 'Connected successfully<br>';
    $sql = "DELETE FROM products WHERE id = $id";
-   
    if (mysqli_query($conn, $sql)) {
       echo "Record deleted successfully";
-	  header("location: product1.php");
+	  header("location: index.php");
    } else {
       echo "Error deleting record: " . mysqli_error($conn);
    }

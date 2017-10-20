@@ -3,13 +3,15 @@ if(isset($_SESSION['username']))
 	$username = $_SESSION['username'];
 else
 	$username = "anon";
-if($username != "anon")
-  $log = "<a class= 'log btn btn-secondary' href='logout.php'>Log out</a>";
+if($username != "anon" and $username !="admin")
+  $log = "<a class= 'log btn btn-secondary' href='myaccount.php'>My Account</a><a class= 'log btn btn-secondary' href='logout.php'>Log out</a>";
+else if($username != "anon" and $username =="admin")
+  $log = "<a class= 'log btn btn-secondary' href='manageusers.php'>View Users</a><a class= 'log btn btn-secondary' href='manageorders.php'>View Orders</a><a class= 'log btn btn-secondary' href='logout.php'>Log out</a>";
 else
-  $log = "<div class='btn-group'><a class= 'log btn btn-secondary' href='register.php'>Join us</a><a data-toggle='modal' data-target='#logIn' class= 'log btn btn-secondary dropdown-toggle' href='#' onclick='removeScanlines()'>Log in</a></div>
+  $log = "<div class='btn-group'><a class= 'log btn btn-secondary' href='register.php'>Join us</a><a data-toggle='modal' data-target='#logIn' class= 'log btn btn-secondary' href='#' onclick='removeScanlines()'>Log in</a></div>
 <div class='modal fade' id='logIn' tabindex='-1' role='dialog' aria-labelledby='logInModal' aria-hidden='true' style='z-index:9999999999999999999999999'>
-<div class='modal-dialog' role='document'>
-<div class='modal-content'>
+<div class='modal-dialog text-right' role='document'>
+<div style='color: black;' class='modal-content'>
 <div class='modal-header'>
 <h4 class='modal-title' id='logInModal'>Welcome back.</h4>
 <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
